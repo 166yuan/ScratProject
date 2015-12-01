@@ -1,0 +1,143 @@
+.ui-carousel ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.ui-carousel li {
+    display: none;
+    list-style: none;
+    position: absolute;
+}
+.ui-carousel .active, .ui-carousel .next, .ui-carousel .prev {
+    display: block;
+}
+/* 滑动的块 */
+.ui-carousel .slide {
+    -webkit-transition: -webkit-transform ease-in-out 0.6s;
+    -moz-transition: -moz-transform ease-in-out 0.6s;
+    -ms-transition: -ms-transform ease-in-out 0.6s;
+    -o-transition: -o-transform ease-in-out 0.6s;
+    transition: transform ease-in-out 0.6s;
+}
+/* 下一块滑动前 */
+.ui-carousel .next {
+    left: 100%;
+}
+.ui-carousel .prev {
+    left: -100%;
+}
+/* 以上为插件默认样式 */
+
+/* ------ 华丽的分界线 ------ */
+
+/* 以下为自定义样式 */
+.M-carousel {
+    // max-width:480px;
+    height: 100%;
+    overflow:hidden;
+    position:relative;
+    // display:inline-block;
+    ul {
+        display:-webkit-box;
+    }
+
+    li {
+        width:100%;
+        // height:140px;
+        text-align:center;
+        position:relative;
+    }
+
+    img {
+        z-index:1;
+        width:100%;
+        height:100%;
+        position:relative;
+        vertical-align:middle;
+    }
+
+    &SubTitle {
+        left:0;
+        bottom:0;
+        z-index:2;
+        color:#fff;
+        width:100%;
+        text-align:left;
+        position:absolute;
+        background-color:rgba(0,0,0,.4);
+
+        p {
+            width:78%;
+            font-size:13px;
+            padding:3px 5px;
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+        }
+
+        &:empty {
+            display:none;
+        }
+    }
+
+    &Controler {
+        /*left:50%;
+        z-index:2;
+        bottom:1px;
+        position:absolute;*/
+        line-height:20px;
+        text-align:center;
+        /*margin:0 0 0 -40px;*/
+
+        em {
+            left:0;
+            z-index:2;
+            width:100%;
+            bottom:10px;
+            position:absolute;
+        }
+
+        div {
+            top:50%;
+            z-index:2;
+            color:#fff;
+            width:35px;
+            height:35px;
+            font-size:35px;
+            text-align:left;
+            overflow:hidden;
+            margin:-15px 0 0;
+            line-height:30px;
+            position:absolute;
+            border-radius:20px;
+            display:inline-block;
+            background:rgba(0,0,0,.3);
+        }
+
+        i {
+            width:8px;
+            height:8px;
+            overflow:hidden;
+            margin:0 0 0 3px;
+            border-radius:5px;
+            background:#f4f4f4;
+            display:inline-block;
+            vertical-align:middle;
+            box-shadow:rgba(0,0,0,.15) 1px 1px 2px inset;
+            /*-webkit-transition:background .3s ease-in-out;*/
+        }
+
+        .act {
+            background:#f15a0c;
+        }
+    }
+}
+
+.ui-carousel-prev {
+    left:2px;
+    text-indent:10px;
+}
+.ui-carousel-next {
+    right:2px;
+    text-indent:12px;
+}

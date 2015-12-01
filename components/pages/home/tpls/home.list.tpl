@@ -1,0 +1,1 @@
+<ul><% for(var i = 0;i<data.items.length;i++){%><li data-id="<%=data.items[i].id%>" data-region="bottom-feature" data-pos="<%=i%>" data-col="<%=data.items[i].title%>" data-gourl="<%=data.items[i].url%>" ><div><img src="<%= data.items[i].image %>" /></div><p><%=data.items[i].title%></p></li><% } %></ul>

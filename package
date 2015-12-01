@@ -1,0 +1,93 @@
+#!/bin/sh
+
+# 页端版本
+client_version="master"
+
+# 服务端版本
+server_version="master"
+
+# 是否跟随页端版本
+flow_client=
+
+# 显示的分支名
+show_name=
+
+while getopts :c:s:r:n:f opt; do
+    case $opt in
+        # 页端分支
+        c) client_version=$OPTARG ;;
+        # 服务端分支
+        s) server_version=$OPTARG ;;
+        # 发布目录
+        r) release_path=$OPTARG ;;
+        # 发布完后自动打开
+        n) show_name=$OPTARG ;;
+        # 跟随页端版本
+        f) flow_client=1 ;;
+    esac
+done
+
+if [ ! -n "$show_name" ];then
+    show_name=$client_version
+fi
+
+
+if [ $flow_client ]
+    # 没输入则默认跟前端同个版本
+    then
+        server_version=$client_version
+fi
+
+printInfo(){
+    echo "\033[32m✔︎\033[0m $1 \033[36m>>>\033[0m $2"
+}
+
+if [ ! -d .package ];then
+    mkdir .package
+    printInfo "mkdir" ".package"
+else
+    rm -rf .package/*
+fi
+
+printInfo "UPDATE" "client."
+git checkout $client_version
+git pull
+
+printInfo "UPDATE" "component_modules."
+cd component_modules
+git pull
+
+printInfo "UPDATE" "server."
+cd ../server
+git checkout $server_version
+git pull
+
+cd ..
+
+scrat release -cuopd .package --no-color
+
+cd .package
+
+rm init package
+
+cd server
+rm -rf ./node_modules
+
+cd ..
+
+pack_time=$(date +'%Y%m%d%H%M')
+pack_name="pi-shop-mobile-dev-"$show_name"-"$pack_time".tgz"
+printInfo "PACKAGENAME" $pack_name
+tar -zcf $pack_name *
+
+printInfo "SCP" $pack_name
+scp ./$pack_name ali17:/datacenter/pi-shop-pkg
+
+cd ..
+printInfo "RM" ".package"
+rm -rf ./.package
+
+
+
+
+

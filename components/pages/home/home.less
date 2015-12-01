@@ -1,0 +1,176 @@
+.P-home {
+    &Banner {
+        text-align:center;
+        div {
+            overflow:hidden;
+            position:relative;
+        }
+        a {
+            color:#333;
+            display:block;
+            text-decoration:none;
+        }
+        img {
+            z-index:1;
+            width:100%;
+            height:100%;
+            position:relative;
+            display:inline-block;
+        }
+        b {
+            left:0;
+            bottom:0;
+            z-index:2;
+            color:#fff;
+            width:100%;
+            font-size:13px;
+            text-align:left;
+            padding:3px 5px;
+            position:absolute;
+            font-weight: normal;
+            background:rgba(0,0,0,.5);
+        }
+
+    }
+
+    &ListsArea {
+        padding:5px 5px 0;
+    }
+
+    &Bottom {
+        margin:0 0 10px;
+        background:#fff;
+        padding:10px 0 0;
+        text-align:center;
+        ul {
+            /*height:80px;
+            line-height:80px;*/
+            display:inline-block;
+        }
+        div {
+            height:80px;
+            width:157px;
+            overflow:hidden;
+            border-radius:5px;
+            display:inline-block;
+        }
+        li {
+            display:inline-block;
+            &:last-child {
+                margin:0 0 0 5px;
+            }
+        }
+        p {
+            width:100%;
+            padding:3px 0;
+            font-size:14px;
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+        }
+        img {
+            width:100%;
+            height:100%;
+        }
+    }
+
+    &Topsite {
+        padding:0 0 10px;
+        .M-listTextItemList {
+            padding:5px 0;
+            display:-webkit-box;
+            -webkit-box-pack: justify;
+
+            li {
+                &:first-child {
+                    border-left: 0;
+                }
+                height:18px;
+                line-height:18px;
+                text-align:center;
+                -webkit-box-flex:1;
+                border-left:1px solid #AAA;
+            }
+        }
+    }
+
+    &LoadingCon {
+        min-height:120px;
+        position:relative;
+    }
+
+    .M-listBannerCon {
+        margin:0;
+        padding:0;
+        min-height:140px;
+        text-align:center;
+        div {
+            overflow:hidden;
+            min-height:100px;
+            position:relative;
+        }
+        a {
+            color:#333;
+            display:block;
+            text-decoration:none;
+        }
+        img {
+            z-index:1;
+            width:100%;
+            height:100%;
+            display:block;
+            position:relative;
+        }
+        b {
+            left:0;
+            bottom:0;
+            z-index:2;
+            color:#fff;
+            width:100%;
+            font-size:13px;
+            text-align:left;
+            padding:3px 5px;
+            position:absolute;
+            font-weight: normal;
+            background:rgba(0,0,0,.5);
+            &:empty {
+                display:none;
+            }
+        }
+
+        h3 {
+            padding:0;
+            color:#666;
+            margin:5px 0 0;
+            font-size:14px;
+            text-align:left;
+            &:empty {
+                display:none;
+            }
+        }
+
+        p{
+            margin:0;
+            padding:0;
+            color:#CCC;
+            font-size:13px;
+            text-align:left;
+            &:empty {
+                display:none;
+            }
+        }
+    }
+
+    .M-spList:last-child {
+        border-bottom:1px solid #D8D8D8;
+    }
+}
+
+@media screen and (min-width:320px){
+    .P-homeBottom div {
+        width:140px;
+    }
+    .P-homeBottom li:last-child {
+        margin: 0 7px 0 5px;
+    }
+}

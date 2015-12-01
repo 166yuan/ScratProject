@@ -1,0 +1,26 @@
+#!/bin/sh
+
+outfile="private/log/sys.out"
+
+echo "Init..."
+rm -f pid
+mkdir -p private/log && rm -f $outfile
+
+echo "Setting..."
+# --registry=http://r.cnpmjs.org
+echo "npm install --production" >> $outfile
+cd server
+#npm.harmony install --production >> $outfile
+/usr/local/node4.2.2/bin/npm install --production >> $outfile
+
+cd ..
+
+echo "Starting..."
+echo "starting node app" >> $outfile
+/usr/local/node4.2.2/bin/node server/server.js  ENV=1 PORT=8200 APP_NAME=pi-shop >> $outfile&
+
+echo $! > pid
+echo "App start... PID >>> $!" >> $outfile
+echo "App $! online."
+
+exit 0;

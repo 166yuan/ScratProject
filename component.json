@@ -1,0 +1,18 @@
+{
+	"name": "frontend-shop"
+	,"version": "1.0.0"
+	,"dependencies": {
+		"common": "1.0.0"
+		,"container": "1.0.0"
+		,"core":"1.0.0"
+		,"datacenter":"1.0.0"
+		,"list":"1.0.0"
+		,"lazyLoad":"1.0.0"
+		,"tab":"1.0.0"
+		,"template":"1.0.0"
+		,"pageManager":"1.0.0"
+		,"router":"1.0.0"
+        ,"underscore": "1.5.2"
+        ,"uc": "1.0.0"
+	}
+}

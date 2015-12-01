@@ -1,0 +1,18 @@
+#!/bin/sh
+
+pid_path=./pid
+if [ -f "$pid_path" ];then
+	pid=$(cat $pid_path)
+fi
+
+if [ -z "$pid" ];then
+	echo "No such process."
+else
+	status=$(pgrep node | grep $pid)
+	if [ -n "$status" ];then
+		echo "Stop pid $pid"
+		kill $pid
+	else
+		echo "Stop fail.No such process."
+	fi
+fi

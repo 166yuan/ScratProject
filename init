@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ ! -d component_modules ];then
+	mkdir component_modules
+	cd component_modules
+	git clone git@git.wxpai.cn:pi-plusplus/frontend-componets.git .
+	cd ..
+fi
+
+if [ ! -d server ];then
+	mkdir server
+	cd server
+	git clone git@git.wxpai.cn:pi-plusplus/fe-server.git .
+	npm install
+	cd ..
+fi
+
+exit 0;

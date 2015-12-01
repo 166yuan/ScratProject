@@ -1,0 +1,199 @@
+.P-detail {
+    position:relative;
+
+    &Con {
+        padding:0 0 30px;
+    }
+
+    [data-adorn="arrow"] {
+        position:relative;
+        &:after {
+            top:50%;
+            width:12px;
+            right:15px;
+            height:12px;
+            content:" ";
+            margin-top:-8px;
+            position:absolute;
+            border-top: 1px solid #cbc9cc;
+            border-right: 1px solid #cbc9cc;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+
+    [data-act="toHome"] {
+        padding:0 0 0 40px;
+        &:before {
+            top:11px;
+            left: 10px;
+            content: "";
+            width: 22px;
+            height: 21px;
+            position: absolute;
+            background: url("imgs/ico_nav_home_off.png?__inline");
+            background-size: 100%;
+        }
+    }
+
+    .fn_btn() {
+        height:45px;
+        color:#191919;
+        font-size:14px;
+        margin:0 0 10px;
+        line-height:45px;
+        padding-left:10px;
+        background-color:#ffffff;
+        border-bottom:1px solid #f4f4f4;
+    }
+
+    &Show {
+        .fn_btn();
+        &[data-status="1"] {
+            height:40px;
+            color: #ff4e00;
+            line-height:40px;
+            text-align: center;
+            background-color: #ffffff;
+            border-bottom: 2px solid #ff4e00;
+        }
+    }
+
+    &GoodsCon {
+
+    }
+
+    &Swiper {
+        z-index:1;
+        height:300px;
+        margin:0 auto;
+        overflow:hidden;
+        position:relative;
+
+        img {
+            width:100%;
+        }
+    }
+
+    &Goods {
+        
+        overflow:hidden;
+        background-color: #fff;
+        
+        > div {
+            padding:12px 10px;
+            border-top:1px solid #f2f2f2;
+        }
+
+        ul {
+            color:#dadada;
+            font-size:12px;
+            display:-webkit-box;
+            -webkit-box-pack:justify;
+        }
+
+        strong {
+            font-weight:normal;
+        }
+
+        span {
+            color:#f60;
+            font-size:14px;
+            font-weight:bold;
+            margin:0 2px 0 0;
+        }
+    }
+
+    [data-symbol] {
+        &:before {
+            margin:0 2px 0 0;
+            content:attr(data-symbol);
+        }
+    }
+
+    &Opts {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 7px;
+        position: relative;
+        background-color: #fff;
+        border-top: 1px solid #f4f4f4;
+        border-bottom: 1px solid #f4f4f4;
+    }
+
+    &Func {
+        > div {
+            .fn_btn();
+        }
+    }
+
+    &Note {
+        height:0;
+        padding:10px;
+        overflow:hidden;
+        -webkit-transition:height 0.5s ease-in-out;
+        &[data-status="1"] {
+            height:100%;
+        }
+        img {
+            display:block;
+        }
+    }
+
+    &Cart {
+        left:0;
+        width:100%;
+        bottom:-1px;
+        height:50px;
+        position:fixed;
+        text-align:center;
+        display:-webkit-box;
+
+        div {
+            color:#ffffff;
+            font-size:16px;
+            line-height: 50px;
+            &:nth-child(1) {
+                -webkit-box-flex: 2.5;
+                background-color: #ff4e00;
+            }
+
+            &:nth-child(2) {
+                -webkit-box-flex: 2;
+                background-color: #dc2625;
+            }
+
+            &:nth-child(3) {
+                width:50px;
+                color:#f54900;
+                font-size:12px;
+                line-height:20px;
+                background-color: #2b1716;
+
+                &:before {
+                    content:" ";
+                    width:20px;
+                    height:20px;
+                    display:block;
+                    margin:9px 0 0 15px;
+                    background: url(imgs/ico_money.png?__inline) no-repeat;
+                    background-size:100%;
+                }
+            }
+        }
+    }
+
+    &ToCart {
+        top:10px;
+        z-index:4;
+        right:10px;
+        content:"";
+        width:50px;
+        height:50px;
+        position:fixed;
+        background: url("imgs/ico_car.png?__inline") top right no-repeat;
+        background-size: 32px 32px;
+    }
+}
